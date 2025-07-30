@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getProducts } from "../services/products";
 import { useCart } from "../contexts/CartContext";
 import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
 
 function Home() {
   const [products, setProducts] = useState([]);
@@ -115,7 +116,10 @@ function Home() {
             </Link>
             <p className="text-gray-600 mt-1">${product.price}</p>
             <button
-              onClick={() => addToCart(product)}
+              onClick={() => {
+                addToCart(product);
+                toast.success(`${product.title} added to cart`);
+              }}
               className="mt-auto bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
             >
               Add to Cart
