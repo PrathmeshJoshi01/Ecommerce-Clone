@@ -11,7 +11,7 @@ function Navbar() {
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="text-2xl font-bold tracking-wide">
-          MyShop
+          MyShopify
         </Link>
 
         {/* Links */}

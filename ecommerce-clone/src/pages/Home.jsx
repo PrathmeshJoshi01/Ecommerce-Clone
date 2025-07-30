@@ -90,7 +90,7 @@ function Home() {
 
 
       <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg p-10 mb-10 shadow-lg">
-        <h2 className="text-4xl font-bold mb-4">Welcome to MyShop 🛍️</h2>
+        <h2 className="text-4xl font-bold mb-4">Welcome to MyShopify 🛍️</h2>
           <p className="text-lg">
             Discover amazing products at the best prices. Sign up and start shopping today!
           </p>
