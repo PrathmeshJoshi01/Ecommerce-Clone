@@ -9,6 +9,7 @@ import Loader from "./components/Loader";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import ProtectedRoute from "./components/ProtectedRoute";
+import Footer from "./components/Fotter";
 
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
       </Routes>
+      <Footer/>
     </Router>
   );
 }

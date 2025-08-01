@@ -39,7 +39,6 @@ function CategorySidebar() {
           )}
         </li>
 
-        {/* Add more categories */}
       </ul>
     </div>
   );

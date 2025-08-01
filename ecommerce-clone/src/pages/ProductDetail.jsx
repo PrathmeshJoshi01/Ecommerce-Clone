@@ -19,7 +19,7 @@ function ProductDetail() {
 
   if (!product) return <h2 className="p-6">Loading...</h2>;
 
-  // check if item is already in cart
+  // check item
   const cartItem = cart.find((item) => item.id === product.id);
   const qty = cartItem ? cartItem.qty : 0;
 

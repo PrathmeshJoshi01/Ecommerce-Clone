@@ -23,7 +23,7 @@ function Home() {
     });
   }, []);
 
-  // filter products whenever filters change
+  // filter
   useEffect(() => {
     let result = products;
 
@@ -54,17 +54,16 @@ function Home() {
 
   return (
     <div className="max-w-7xl mx-auto p-6 flex gap-6">
-      {/* Sidebar Section */}
+      {/* sidebar */}
       <div className="w-1/4">
         <CategorySidebar />
         <BestSellers products={products} />
       </div>
 
-      {/* Main Content */}
       <div className="w-3/4">
         <h1 className="text-3xl font-bold mb-6">All Products</h1>
 
-        {/* Filters */}
+        {/* filters */}
         <div className="flex gap-4 mb-6">
           <input
             type="text"
@@ -106,7 +105,7 @@ function Home() {
             Shop Now
           </button>
         </div>
-        {/* Product Grid */}
+
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {filtered.map((product) => {
             const cartItem = cart.find((item) => item.id === product.id);
@@ -118,7 +117,7 @@ function Home() {
                 key={product.id}
                 className="bg-white rounded-lg shadow hover:shadow-xl transform transition p-4 relative"
               >
-                {/* Favourite Heart */}
+                {/* heart */}
                 <FaHeart
                   className={`absolute top-3 right-3 cursor-pointer ${
                     isFav ? "text-pink-500" : "text-gray-300"
@@ -127,7 +126,6 @@ function Home() {
                   onClick={() => toggleFavourite(product.id)}
                 />
 
-                {/* Product Image & Name */}
                 <Link to={`/product/${product.id}`}>
                   <img
                     src={product.images[0]}
@@ -139,7 +137,6 @@ function Home() {
                   </h3>
                 </Link>
 
-                {/* Price */}
                 <p className="text-gray-600">${product.price}</p>
 
                 {/* Rating */}
@@ -148,7 +145,7 @@ function Home() {
                     <FaStar
                       key={i}
                       className={
-                        i < (product.rating || 3) // default rating 3
+                        i < (product.rating || 3) 
                           ? "text-yellow-400"
                           : "text-gray-300"
                       }
@@ -156,7 +153,7 @@ function Home() {
                   ))}
                 </div>
 
-                {/* Add to Cart Counter */}
+                {/* add to cart */}
                 {qty === 0 ? (
                   <button
                     onClick={() => addToCart(product)}
@@ -182,7 +179,7 @@ function Home() {
                   </div>
                 )}
 
-                {/* Buy Now */}
+                {/* buy now */}
                 <button
                   onClick={() => navigate(`/product/${product.id}`)}
                   className="mt-3 w-full bg-gradient-to-r from-green-400 to-green-600 text-white py-2 rounded-full shadow-lg transform hover:scale-105 transition"

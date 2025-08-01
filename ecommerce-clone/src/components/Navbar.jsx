@@ -25,7 +25,6 @@ function Navbar() {
           </Link>
           <Link to="/checkout" className="hover:text-gray-200 transition">Checkout</Link>
 
-          {/* Auth Links */}
           {user ? (
             <>
               <span className="font-semibold">Hi, {user.email}</span>

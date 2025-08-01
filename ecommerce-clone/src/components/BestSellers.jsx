@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 
 function BestSellers({ products }) {
-  // get lowest price 3–4 products
+  // lowest prize product
   const bestDeals = products
     .filter((p) => p.price < 50)
     .slice(0, 4);
@@ -25,7 +25,7 @@ function BestSellers({ products }) {
             <h3 className="mt-2 text-sm font-semibold">{p.title}</h3>
             <p className="text-green-600">${p.price}</p>
 
-            {/* Rating */}
+            {/* rating */}
             <div className="flex items-center mt-1">
               {[...Array(5)].map((_, i) => (
                 <FaStar
