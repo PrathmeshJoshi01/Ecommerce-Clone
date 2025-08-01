@@ -1,4 +1,3 @@
----
 # 🛍️ E‑Commerce Web Application
 
 A **E‑commerce web app** built with **React + Vite**, **TailwindCSS**, and **React Router**.  
