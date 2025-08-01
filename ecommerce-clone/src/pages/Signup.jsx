@@ -4,6 +4,7 @@ import { auth } from "../services/firebase";
 import { useNavigate, Link } from "react-router-dom";
 
 function Signup() {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -12,7 +13,7 @@ function Signup() {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      await createUserWithEmailAndPassword(auth, name, email, password);
       navigate("/");
     } catch (err) {
       setError(err.message);
@@ -24,6 +25,15 @@ function Signup() {
       <form onSubmit={handleSignup} className="bg-white p-8 rounded-lg shadow-md w-96">
         <h1 className="text-2xl font-bold mb-6">Sign Up</h1>
         {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
+        
+        <input
+          type="name"
+          placeholder="Name"
+          className="w-full p-2 mb-4 border rounded"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+
         <input
           type="email"
           placeholder="Email"
